@@ -21,10 +21,13 @@ namespace Farneti.Michele._5H.PrimoEF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("cognome")
+                    b.Property<string>("Cognome")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
                     b.HasKey("PersonaID");

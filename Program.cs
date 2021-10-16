@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Farneti.Michele._5H.PrimoEF.Models;
 
 namespace Farneti.Michele._5H.PrimoEF
@@ -10,13 +11,23 @@ namespace Farneti.Michele._5H.PrimoEF
             Console.WriteLine("Hello db-World!");
 
             DbPersone db = new();
-            
-            for(int i = 0; i <100; i++)
+                
+            foreach(Persona R in db.Persone)
             {
-                db.Persone.Add(new Persona{nome="Marco",cognome="Violi"});
-                db.SaveChanges();
+                Console.WriteLine(R);
             }
 
+            var g = db.Persone.Max(Marco => Marco.PersonaID);
+            Console.WriteLine(g);
+
+            //Preleva il primo record
+            var p = db.Persone.First();
+            db.Persone.Remove(p);
+
+            db.Persone.RemoveRange(db.Persone);
+
+            db.Persone.Add(new Persona{Nome="Marco",Cognome="Violi", Email="marco.violi@libero.it"});
+            db.SaveChanges();
         }
     }
 }

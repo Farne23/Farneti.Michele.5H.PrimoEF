@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Farneti.Michele._5H.PrimoEF.Migrations
 {
     [DbContext(typeof(DbPersone))]
-    [Migration("20211015074303_Primaversione")]
+    [Migration("20211016064433_Primaversione")]
     partial class Primaversione
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,10 +23,13 @@ namespace Farneti.Michele._5H.PrimoEF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("cognome")
+                    b.Property<string>("Cognome")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
                     b.HasKey("PersonaID");
